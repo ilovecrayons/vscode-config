@@ -568,85 +568,6 @@ div.monaco-workbench button.monaco-button {
   background-image: linear-gradient(45deg, rgba(122, 162, 247, 0.8), rgba(173, 142, 230, 0.7), rgba(187, 154, 247, 0.75)) !important;
 }
 
-/* Specifically target welcome page links and editor hyperlinks only */
-.monaco-workbench .welcome-page a,
-.monaco-workbench .welcomePage .commands .item button,
-.monaco-workbench .welcome-view-content a,
-.monaco-editor .detected-link,
-.monaco-editor .detected-link-active,
-.monaco-workbench .codicon-link,
-.monaco-editor .mtk5.mtku,
-.monaco-editor a[href] {
-  color: #7aa2f7 !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  position: relative !important;
-  transition: all 0.2s ease !important;
-  border-bottom: 1px solid transparent !important;
-}
-
-/* Welcome page specific styling */
-.welcomePage .commands .item button {
-  color: #7aa2f7 !important;
-  border: none !important;
-  background: transparent !important;
-  font-weight: 500 !important;
-}
-
-/* Hover effect for the targeted links only */
-.monaco-workbench .welcome-page a:hover,
-.monaco-workbench .welcomePage .commands .item button:hover,
-.monaco-workbench .welcome-view-content a:hover,
-.monaco-editor .detected-link:hover,
-.monaco-editor .detected-link-active:hover,
-.monaco-workbench .codicon-link:hover,
-.monaco-editor .mtk5.mtku:hover,
-.monaco-editor a[href]:hover {
-  color: #bb9af7 !important;
-  text-shadow: 0 0 5px rgba(187, 154, 247, 0.4) !important;
-  border-bottom: 1px solid #bb9af7 !important;
-  text-decoration: none !important;
-}
-
-/* Add the animated underline only to specific links */
-.monaco-workbench .welcome-page a::after,
-.monaco-workbench .welcomePage .commands .item button::after,
-.monaco-workbench .welcome-view-content a::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, #7aa2f7, #ad8ee6, #bb9af7);
-  background-size: 200% 100%;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-/* Show underline on hover */
-.monaco-workbench .welcome-page a:hover::after,
-.monaco-workbench .welcomePage .commands .item button:hover::after,
-.monaco-workbench .welcome-view-content a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-  animation: linkGradientMove 2s linear infinite;
-}
-
-/* Animation for the underline gradient */
-@keyframes linkGradientMove {
-  0% {
-    background-position: 0% center;
-  }
-  50% {
-    background-position: 100% center;
-  }
-  100% {
-    background-position: 0% center;
-  }
-}
-
 /* Activity Bar (left sidebar) styling */
 .monaco-workbench .activitybar > .content {
   background: linear-gradient(to bottom, #1a1b26, #1f2335, #24283b, #1f2335) !important;
@@ -780,13 +701,13 @@ div.monaco-workbench button.monaco-button {
 /* Menu Bar items hover */
 .monaco-workbench .menubar > .menubar-menu-button:hover {
   color: #bb9af7 !important;
-  background-color: rgba(187, 154, 247, 0.1) !important;
+  /* background-color: rgba(187, 154, 247, 0.1) !important; */
 }
 
 /* Menu Bar focused item */
 .monaco-workbench .menubar.inactive > .menubar-menu-button.open {
   color: #c0caf5 !important;
-  background-color: rgba(122, 162, 247, 0.2) !important;
+  /* background-color: rgba(122, 162, 247, 0.2) !important; */
 }
 
 /* Menu dropdown background */
