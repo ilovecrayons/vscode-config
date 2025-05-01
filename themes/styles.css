@@ -1,0 +1,794 @@
+/* Tab styling */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab {
+  background: linear-gradient(45deg, #1f2335, #1a1b26) !important;
+  border: none !important;
+  border-radius: 6px 6px 0 0 !important;
+  margin-right: 4px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tab hover */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab:hover {
+  background: linear-gradient(45deg, #282d42, #1f2335) !important;
+  box-shadow: 0 0 12px rgba(123, 111, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Tab text transition */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab
+  .tab-label {
+  color: #7982a9 !important;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+}
+
+/* Active tab text */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active
+  .tab-label {
+  color: #c0caf5 !important;
+  text-shadow: 0 0 8px rgba(192, 202, 245, 0.2);
+}
+
+/* Tab indicator animation */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7aa2f7, #ad8ee6, #bb9af7);
+  background-size: 200% 100%;
+  box-shadow: 0 0 8px rgba(122, 162, 247, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left;
+  animation: tabIndicator 0.3s ease-out, gradientMove 1s linear infinite;
+}
+
+@keyframes tabIndicator {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* Tab container smooth scroll */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container {
+  scroll-behavior: smooth;
+}
+
+/* Ripple effect */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease-out;
+}
+
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab:active::before {
+  width: 150px;
+  height: 150px;
+  opacity: 0;
+}
+
+/* Active tab */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active:hover {
+  transform: translateY(-0.5px);
+  box-shadow: 0 5px 15px rgba(123, 111, 255, 0.2) !important;
+}
+
+/* Tab close button */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab
+  .action-label {
+  transition: all 0.2s ease;
+}
+
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab
+  .action-label:hover {
+  transform: rotate(90deg);
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 50%;
+}
+
+/* Scroll bar */
+.monaco-scrollable-element > .scrollbar > .slider {
+  transition: all 0.2s ease-out !important;
+  width: 8px !important;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #7aa2f7, #bb9af7) !important;
+  opacity: 0.5;
+}
+
+.monaco-scrollable-element > .scrollbar > .slider:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+  animation: glowEffect 1s ease-in-out infinite;
+}
+
+@keyframes glowEffect {
+  0% {
+    box-shadow: 0 0 5px rgba(122, 162, 247, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(187, 154, 247, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(122, 162, 247, 0.5);
+  }
+}
+
+/* Cursor animation */
+.monaco-editor .cursor {
+  transition: all 0.05s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 2.5px !important;
+  background: linear-gradient(to bottom, #1cd8d2, #93edc7) !important;
+  box-shadow: 0 0 4px rgba(184, 165, 255, 0.4);
+  animation: cursorExpand 1.5s ease-in-out infinite;
+}
+
+@keyframes cursorExpand {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+    filter: brightness(1);
+    box-shadow: 0 0 4px rgba(184, 165, 255, 0.4);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleY(1.3);
+    filter: brightness(1.5);
+    box-shadow: 0 0 12px #ade8f4;
+  }
+  75% {
+    opacity: 0.9;
+    transform: scaleY(1.1);
+    filter: brightness(1.2);
+    box-shadow: 0 0 18px #48cae4;
+  }
+}
+
+/* Line highlight */
+.monaco-editor .current-line {
+  background: rgba(122, 162, 247, 0.05) !important;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  border-left: 2px solid rgba(122, 162, 247, 0.3);
+  transition: all 0.3s ease;
+}
+
+.monaco-editor .current-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(122, 162, 247, 0.08) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: lineShine 2s ease-in-out infinite;
+}
+
+@keyframes lineShine {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Selection highlight */
+/* shine animation on highlighted text. this shine animation should be different than the line shine */
+
+.monaco-editor .selected-text {
+  background: rgba(187, 154, 247, 0.2) !important;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.monaco-editor .selected-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(187, 154, 247, 0.3) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: selectionShine 2s ease-in-out infinite;
+}
+@keyframes selectionShine {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Status bar */
+/* The status bar should have a colored gradient background with a glow animation that propagates from left to right*/
+.monaco-workbench
+  .part.statusbar {
+  background: linear-gradient(
+    90deg,
+    #2a3253,
+    #2d2c4a,
+    #2e2b4a,
+    #2a3253
+  ) !important;
+  box-shadow: 0 0 6px rgba(122, 162, 247, 0.15);
+  position: relative;
+}
+.monaco-workbench
+  .part.statusbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(122, 162, 247, 0.08),
+    rgba(187, 154, 247, 0.08),
+    rgba(122, 162, 247, 0.08)
+  );
+  transform: translateX(-100%);
+  animation: statusBarGlow 10s ease-in-out infinite; /* Changed from 3s to 10s to make it significantly slower */
+  pointer-events: none; /* Add this to ensure clicks pass through */
+  z-index: 1; /* Lower z-index */
+}
+
+/* Status bar text */
+.monaco-workbench
+  .part.statusbar
+  .statusbar-item {
+  color: #c0caf5 !important;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+  position: relative; /* Ensure position is relative */
+  z-index: 2; /* Higher z-index than background effects */
+}
+.monaco-workbench
+  .part.statusbar
+  .statusbar-item:hover {
+  color: #bb9af7 !important;
+  text-shadow: 0 0 8px rgba(187, 154, 247, 0.2);
+}
+/* Status bar active item */
+.monaco-workbench
+  .part.statusbar
+  .statusbar-item.active {
+  color: #7aa2f7 !important;
+  text-shadow: 0 0 8px rgba(122, 162, 247, 0.2);
+}
+
+/* Status bar hover effect */
+.monaco-workbench
+  .part.statusbar
+  .statusbar-item:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(122, 162, 247, 0.1);
+  border-radius: 4px;
+  transition: all 0.3s ease-out;
+  pointer-events: none; /* Add this to ensure clicks pass through */
+}
+.monaco-workbench
+  .part.statusbar
+  .statusbar-item:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(122, 162, 247, 0.2),
+    rgba(187, 154, 247, 0.2),
+    rgba(122, 162, 247, 0.2)
+  );
+  /* Remove the animation reference */
+  pointer-events: none; /* Add this to ensure clicks pass through */
+}
+
+/* Status bar item active glow */
+.monaco-workbench
+  .part.statusbar
+  .statusbar-item.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(122, 162, 247, 0.2);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(122, 162, 247, 0.3);
+  pointer-events: none; /* Add this to ensure clicks pass through */
+}
+
+.monaco-workbench
+  .part.statusbar
+  .statusbar-item.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(122, 162, 247, 0.2),
+    rgba(187, 154, 247, 0.2),
+    rgba(122, 162, 247, 0.2)
+  );
+  /* Remove the animation reference */
+  pointer-events: none; /* Add this to ensure clicks pass through */
+}
+
+/* Add the main status bar animation keyframe only */
+@keyframes statusBarGlow {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+/* Extension + editor buttons (the ones that are by default blue by VSCode. an example of this would be the "initialize repository" button) gradient and glow*/
+.monaco-workbench .monaco-button.primary,
+.monaco-workbench .button.primary,
+.monaco-workbench .button-primary,
+.monaco-workbench .monaco-button,
+.monaco-workbench .editor-widget .monaco-button,
+.monaco-workbench .monaco-dialog-box .action-button,
+.monaco-workbench .extensions-viewlet .monaco-button,
+.monaco-workbench .scm-viewlet .monaco-button,
+.monaco-workbench .extension-editor .monaco-button,
+.monaco-workbench .extensions .monaco-button,
+body .monaco-workbench .monaco-button,
+button.monaco-button.primary {
+  background: linear-gradient(45deg, rgba(122, 162, 247, 0.8), rgba(173, 142, 230, 0.7), rgba(187, 154, 247, 0.75)) !important;
+  background-size: 200% 100% !important;
+  background-image: linear-gradient(45deg, rgba(122, 162, 247, 0.8), rgba(173, 142, 230, 0.7), rgba(187, 154, 247, 0.75)) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  color: #ffffff !important;
+  font-weight: 600 !important; /* Slightly bolder text */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important; /* Stronger text shadow */
+  box-shadow: 0 0 6px rgba(122, 162, 247, 0.3) !important; /* Reduced glow */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  opacity: 1 !important;
+}
+
+.monaco-workbench .monaco-button.primary:hover,
+.monaco-workbench .button.primary:hover,
+.monaco-workbench .button-primary:hover,
+.monaco-workbench .monaco-button:hover,
+.monaco-workbench .editor-widget .monaco-button:hover,
+.monaco-workbench .monaco-dialog-box .action-button:hover,
+.monaco-workbench .extensions-viewlet .monaco-button:hover,
+.monaco-workbench .scm-viewlet .monaco-button:hover,
+.monaco-workbench .extension-editor .monaco-button:hover,
+.monaco-workbench .extensions .monaco-button:hover,
+body .monaco-workbench .monaco-button:hover,
+button.monaco-button.primary:hover {
+  background-position: right !important;
+  box-shadow: 0 0 12px rgba(187, 154, 247, 0.6) !important; /* Stronger glow */
+  /* Remove transform: translateY(-1px) */
+  background-image: linear-gradient(45deg, rgba(122, 162, 247, 0.9), rgba(173, 142, 230, 0.8), rgba(187, 154, 247, 0.85)) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Add propagating glow effect on hover */
+.monaco-workbench .monaco-button:hover::after,
+.monaco-workbench .editor-widget .monaco-button:hover::after,
+.monaco-workbench .monaco-dialog-box .action-button:hover::after,
+.monaco-workbench .extensions-viewlet .monaco-button:hover::after,
+.monaco-workbench .extension-editor .monaco-button:hover::after,
+.monaco-workbench button.monaco-button.primary:hover::after,
+body .monaco-workbench .monaco-button:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  z-index: 2;
+  transform: translateX(-100%);
+  animation: buttonHoverGlow 0.8s ease-out infinite;
+  pointer-events: none; /* Ensure clicks pass through */
+}
+
+/* Add the button hover glow animation keyframes */
+@keyframes buttonHoverGlow {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Additional specific selectors for the button styles */
+.monaco-text-button,
+.monaco-workbench .monaco-text-button,
+.monaco-workbench .extension-editor > .header > .details > .header-info > .monaco-button,
+.monaco-workbench .extension-list-item > .details > .header-container .monaco-button,
+.monaco-workbench .scm-editor .monaco-button,
+div.monaco-workbench button.monaco-button {
+  background: linear-gradient(45deg, rgba(122, 162, 247, 0.8), rgba(173, 142, 230, 0.7), rgba(187, 154, 247, 0.75)) !important;
+  background-size: 200% 100% !important;
+  background-image: linear-gradient(45deg, rgba(122, 162, 247, 0.8), rgba(173, 142, 230, 0.7), rgba(187, 154, 247, 0.75)) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 600 !important; /* Slightly bolder text */
+  box-shadow: 0 0 6px rgba(122, 162, 247, 0.3) !important; /* Reduced glow */
+}
+
+/* Override any potential inline styles */
+.monaco-workbench *[style*="background"] .monaco-button,
+.monaco-workbench *[style*="background-color"] .monaco-button {
+  background: linear-gradient(45deg, rgba(122, 162, 247, 0.8), rgba(173, 142, 230, 0.7), rgba(187, 154, 247, 0.75)) !important;
+  background-image: linear-gradient(45deg, rgba(122, 162, 247, 0.8), rgba(173, 142, 230, 0.7), rgba(187, 154, 247, 0.75)) !important;
+}
+
+/* Specifically target welcome page links and editor hyperlinks only */
+.monaco-workbench .welcome-page a,
+.monaco-workbench .welcomePage .commands .item button,
+.monaco-workbench .welcome-view-content a,
+.monaco-editor .detected-link,
+.monaco-editor .detected-link-active,
+.monaco-workbench .codicon-link,
+.monaco-editor .mtk5.mtku,
+.monaco-editor a[href] {
+  color: #7aa2f7 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  position: relative !important;
+  transition: all 0.2s ease !important;
+  border-bottom: 1px solid transparent !important;
+}
+
+/* Welcome page specific styling */
+.welcomePage .commands .item button {
+  color: #7aa2f7 !important;
+  border: none !important;
+  background: transparent !important;
+  font-weight: 500 !important;
+}
+
+/* Hover effect for the targeted links only */
+.monaco-workbench .welcome-page a:hover,
+.monaco-workbench .welcomePage .commands .item button:hover,
+.monaco-workbench .welcome-view-content a:hover,
+.monaco-editor .detected-link:hover,
+.monaco-editor .detected-link-active:hover,
+.monaco-workbench .codicon-link:hover,
+.monaco-editor .mtk5.mtku:hover,
+.monaco-editor a[href]:hover {
+  color: #bb9af7 !important;
+  text-shadow: 0 0 5px rgba(187, 154, 247, 0.4) !important;
+  border-bottom: 1px solid #bb9af7 !important;
+  text-decoration: none !important;
+}
+
+/* Add the animated underline only to specific links */
+.monaco-workbench .welcome-page a::after,
+.monaco-workbench .welcomePage .commands .item button::after,
+.monaco-workbench .welcome-view-content a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #7aa2f7, #ad8ee6, #bb9af7);
+  background-size: 200% 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+/* Show underline on hover */
+.monaco-workbench .welcome-page a:hover::after,
+.monaco-workbench .welcomePage .commands .item button:hover::after,
+.monaco-workbench .welcome-view-content a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  animation: linkGradientMove 2s linear infinite;
+}
+
+/* Animation for the underline gradient */
+@keyframes linkGradientMove {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* Activity Bar (left sidebar) styling */
+.monaco-workbench .activitybar > .content {
+  background: linear-gradient(to bottom, #1a1b26, #1f2335, #24283b, #1f2335) !important;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Activity Bar icons */
+.monaco-workbench .activitybar > .content .monaco-action-bar .action-item .action-label {
+  color: #7982a9 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Activity Bar active icon */
+.monaco-workbench .activitybar > .content .monaco-action-bar .action-item.checked .action-label {
+  color: #bb9af7 !important;
+  text-shadow: 0 0 8px rgba(187, 154, 247, 0.4) !important;
+}
+
+/* Activity Bar icon hover */
+.monaco-workbench .activitybar > .content .monaco-action-bar .action-item:hover .action-label:not(.disabled) {
+  color: #7aa2f7 !important;
+  transform: scale(1.15) !important;
+}
+
+/* Menu Bar (top bar) styling - improved with more specific selectors */
+.monaco-workbench .part.titlebar,
+.monaco-workbench div.titlebar,
+.monaco-workbench .monaco-workbench__main .part.titlebar {
+  background: linear-gradient(90deg, #1a1b26, #1f2335, #24283b, #1f2335) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Override window controls background - more comprehensive approach */
+/* Windows style controls */
+.monaco-workbench div.window-appicon,
+.monaco-workbench .window-controls-container,
+.monaco-workbench .titlebar div[aria-label="Minimize Window"],
+.monaco-workbench .titlebar div[aria-label="Maximize Window"], 
+.monaco-workbench .titlebar div[aria-label="Restore Window"],
+.monaco-workbench .titlebar div[aria-label="Close Window"],
+.monaco-workbench .part.titlebar div.window-controls,
+.monaco-workbench .part.titlebar div.resizer,
+.monaco-workbench div.windows-appicon,
+.monaco-workbench div.window-title,
+.monaco-workbench div.draggable, 
+.monaco-workbench .titlebar > div,
+.monaco-workbench .titlebar-container > div {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Add pseudo-elements to handle overlays */
+.monaco-workbench .part.titlebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px; /* Wide enough to cover the window control area */
+  height: 100%;
+  background: linear-gradient(90deg, #1a1b26, #1f2335, #24283b, #1f2335) !important;
+  z-index: 1;
+  pointer-events: none; /* Make sure it doesn't block clicks */
+}
+
+/* Ensure window controls are on top of our pseudo-element */
+.monaco-workbench .window-controls-container,
+.monaco-workbench div.window-appicon,
+.monaco-workbench .titlebar .window-controls,
+.monaco-workbench .titlebar-container .window-controls-container {
+  z-index: 2 !important;
+  position: relative !important;
+}
+
+/* Style for window control icons */
+.monaco-workbench .window-controls-container .window-icon,
+.monaco-workbench .window-controls-container .window-close,
+.monaco-workbench .window-controls-container .window-maximize,
+.monaco-workbench .window-controls-container .window-minimize,
+.monaco-workbench .window-controls-container .window-icon * {
+  color: #7982a9 !important;
+  opacity: 1 !important;
+  background-color: transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Hover states for window controls */
+.monaco-workbench .window-controls-container .window-icon:hover,
+.monaco-workbench .window-controls-container .window-maximize:hover,
+.monaco-workbench .window-controls-container .window-minimize:hover {
+  color: #c0caf5 !important;
+  background-color: rgba(122, 162, 247, 0.1) !important;
+}
+
+.monaco-workbench .window-controls-container .window-close:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 95, 95, 0.6) !important;
+}
+
+/* Extra styles for macOS traffic lights if applicable */
+.monaco-workbench .titlebar.mac .window-controls-container .window-icon,
+.monaco-workbench .part.titlebar.mac .window-controls-container {
+  background-color: transparent !important;
+}
+
+/* Menu Bar items */
+.monaco-workbench .menubar > .menubar-menu-button {
+  color: #7982a9 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Menu Bar items hover */
+.monaco-workbench .menubar > .menubar-menu-button:hover {
+  color: #bb9af7 !important;
+  background-color: rgba(187, 154, 247, 0.1) !important;
+}
+
+/* Menu Bar focused item */
+.monaco-workbench .menubar.inactive > .menubar-menu-button.open {
+  color: #c0caf5 !important;
+  background-color: rgba(122, 162, 247, 0.2) !important;
+}
+
+/* Menu dropdown background */
+.monaco-menu .monaco-action-bar.vertical .action-item .action-label {
+  color: #c0caf5 !important;
+}
+
+/* Menu dropdown item hover */
+.monaco-menu .monaco-action-bar.vertical .action-item .action-label:hover {
+  color: #bb9af7 !important;
+  background-color: rgba(122, 162, 247, 0.1) !important;
+}
+
+/* Add a subtle gradient glow to the top of the application */
+.monaco-workbench .part.titlebar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(to right, #7aa2f7, #ad8ee6, #bb9af7);
+  opacity: 0.7;
+  box-shadow: 0 0 8px rgba(122, 162, 247, 0.4);
+}

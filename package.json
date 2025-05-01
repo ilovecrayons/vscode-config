@@ -1,0 +1,78 @@
+{
+	"name": "vscode-typing-effect",
+	"displayName": "VS Code Typing Effect",
+	"description": "Add beautiful typing effects to VS Code editor",
+	"version": "0.0.4",
+	"publisher": "nampsh24",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nampsh24/vscode-typing-effect.git"
+	},
+	"engines": {
+		"vscode": "^1.96.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "vscode-typing-effect.enable",
+				"title": "Typing Effect: Enable",
+				"category": "Typing Effect"
+			},
+			{
+				"command": "vscode-typing-effect.disable",
+				"title": "Typing Effect: Disable",
+				"category": "Typing Effect"
+			}
+		]
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.1.0",
+		"@types/json-schema": "^7.0.15",
+		"@types/minimatch": "^5.1.2",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "^16.18.124",
+		"@types/semver": "^7.5.6",
+		"@types/vscode": "^1.96.0",
+		"@typescript-eslint/eslint-plugin": "^5.62.0",
+		"@typescript-eslint/parser": "^5.62.0",
+		"eslint": "^8.45.0",
+		"mocha": "^10.2.0",
+		"typescript": "^5.7.3"
+	},
+	"extensionDependencies": [
+		"be5invis.vscode-custom-css"
+	],
+	"icon": "images/neko.jpg",
+	"dependencies": {
+		"@eslint/eslintrc": "^2.1.4",
+		"eslint": "^8.57.0",
+		"glob": "^10.3.10",
+		"lru-cache": "^7.14.1",
+		"rimraf": "^5.0.5"
+	},
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": true,
+			"description": "This extension can modify user settings"
+		}
+	},
+	"__metadata": {
+		"installedTimestamp": 1745944346425,
+		"targetPlatform": "undefined",
+		"size": 43003
+	}
+}
