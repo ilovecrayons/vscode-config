@@ -205,7 +205,7 @@
 
 /* Cursor animation */
 .monaco-editor .cursor {
-  transition: all 0.05s cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: all 0.05s cubic-bezier(0.4, 0, 0.2, 1); */
   width: 2.5px !important;
   background: linear-gradient(to bottom, #1cd8d2, #93edc7) !important;
   box-shadow: 0 0 4px rgba(184, 165, 255, 0.4);
@@ -671,6 +671,26 @@ div.monaco-workbench button.monaco-button {
   transform: scale(1.15) !important;
 }
 
+/* Activity Bar glow propagation effect (bottom to top) */
+.monaco-workbench .activitybar > .content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(122, 162, 247, 0.08),
+    rgba(187, 154, 247, 0.08),
+    rgba(122, 162, 247, 0.08)
+  );
+  transform: translateY(100%);
+  animation: activityBarGlow 10s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Menu Bar (top bar) styling - improved with more specific selectors */
 .monaco-workbench .part.titlebar,
 .monaco-workbench div.titlebar,
@@ -785,10 +805,103 @@ div.monaco-workbench button.monaco-button {
   content: "";
   position: absolute;
   left: 0;
-  right: 0;
+  right: 140px; /* Stop before window controls area */
   bottom: 0;
   height: 2px;
   background: linear-gradient(to right, #7aa2f7, #ad8ee6, #bb9af7);
   opacity: 0.7;
   box-shadow: 0 0 8px rgba(122, 162, 247, 0.4);
+  z-index: 2; /* Ensure the bottom border remains visible */
+  position: relative; /* Add this to support the ray effect */
+  overflow: hidden; /* Contain the ray of light effect */
 }
+
+/* Add the light ray effect to the titlebar border */
+.monaco-workbench .part.titlebar::after {
+  position: relative; /* Ensure relative positioning */
+}
+
+/* Light ray effect overlay */
+.monaco-workbench .part.titlebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px; /* Wide enough to cover the window control area */
+  height: 100%;
+  background: linear-gradient(90deg, #1a1b26, #1f2335, #24283b, #1f2335) !important;
+  z-index: 1;
+  pointer-events: none; /* Make sure it doesn't block clicks */
+}
+
+/* Add a new pseudo-element for the light ray effect */
+.monaco-workbench .part.titlebar > div:first-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 140px; /* Match the gradient width */
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  opacity: 0;
+  z-index: 3; /* Above the gradient */
+  animation: titlebarLightRay 3s ease-in-out infinite;
+  pointer-events: none; /* Ensure it doesn't block clicks */
+}
+
+/* Animation for the light ray effect */
+@keyframes titlebarLightRay {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  20% {
+    opacity: 0.8;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* Add a subtle gradient glow to the top of the application */
+.monaco-workbench .part.titlebar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 140px; /* Stop before window controls area */
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(to right, #7aa2f7, #ad8ee6, #bb9af7);
+  opacity: 0.7;
+  box-shadow: 0 0 8px rgba(122, 162, 247, 0.4);
+  z-index: 2; /* Ensure the bottom border remains visible */
+}
+
+/* Animation keyframes for activity bar glow (bottom to top) */
+@keyframes activityBarGlow {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
