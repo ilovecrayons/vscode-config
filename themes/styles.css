@@ -718,7 +718,7 @@ div.monaco-workbench button.monaco-button {
 /* Menu dropdown item hover */
 .monaco-menu .monaco-action-bar.vertical .action-item .action-label:hover {
   color: #bb9af7 !important;
-  background-color: rgba(122, 162, 247, 0.1) !important;
+  /* background-color: rgba(122, 162, 247, 0.1) !important; */
 }
 
 /* Add a subtle gradient glow to the top of the application */
@@ -765,13 +765,16 @@ div.monaco-workbench button.monaco-button {
   height: 2px;
   background: linear-gradient(
     to right,
-    transparent,
-    rgba(255, 255, 255, 0.7),
-    transparent
+    transparent 0%,
+    transparent 45%,
+    rgba(255, 255, 255, 0.9) 49.5%,
+    rgba(255, 255, 255, 0.9) 50.5%,
+    transparent 55%,
+    transparent 100%
   );
   opacity: 0;
   z-index: 3; /* Above the gradient */
-  animation: titlebarLightRay 3s ease-in-out infinite;
+  animation: titlebarLightRay 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   pointer-events: none; /* Ensure it doesn't block clicks */
 }
 
