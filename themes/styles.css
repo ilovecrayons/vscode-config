@@ -612,6 +612,11 @@ div.monaco-workbench button.monaco-button {
   z-index: 1;
 }
 
+/* activity bar notification badge */
+.monaco-workbench .activitybar>.content .monaco-action-bar .badge .badge-content {
+  background: linear-gradient(45deg, rgba(105, 155, 255, 0.85), rgba(165, 125, 245, 0.8), rgba(190, 145, 255, 0.85)) !important;
+}
+
 /* Menu Bar (top bar) styling - improved with more specific selectors */
 .monaco-workbench .part.titlebar,
 .monaco-workbench div.titlebar,
