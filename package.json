@@ -16,6 +16,13 @@
 	],
 	"main": "out/extension.js",
 	"contributes": {
+		"themes": [
+			{
+				"label": "SynthWave '84",
+				"uiTheme": "vs-dark",
+				"path": "./themes/synthwave-color-theme.json"
+			}
+		],
 		"commands": [
 			{
 				"command": "vscode-typing-effect.enable",
