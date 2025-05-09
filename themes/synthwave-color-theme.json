@@ -68,7 +68,7 @@
     "editorSuggestWidget.background":"#1E1E1E",
     "editorSuggestWidget.border":"#1E1E1E",
     "editorSuggestWidget.selectedBackground":"#2c313a",
-    "editorSuggestWidget.highlightForeground":"#bb9af7",
+    "editorSuggestWidget.highlightForeground":"#80FFDB",
     "editorSuggestWidget.foreground":"#f8f8f0",
     "editorWidget.background":"#0e0e14",
     "editorWidget.border":"#17171f",
@@ -107,7 +107,7 @@
     "statusBar.debuggingBackground":"#f99b72",
     "statusBar.debuggingForeground": "#060609",
 
-    "terminal.background":"#17171f",
+    "terminal.background":"#000000",
 
     "panel.border":"#262633",
     "panel.background":"#17171f",
@@ -132,16 +132,16 @@
     "input.foreground":"#f8f8f0",
     "input.border":"#2f2f40",
     "input.placeholderForeground":"#ffffff66",
-    "inputOption.activeBorder":"#bb9af7",
+    "inputOption.activeBorder":"#80FFDB",
     "inputOption.activeBackground":"#00000000",
     "inputValidation.infoBackground":"#0A0A0A",
-    "inputValidation.infoBorder":"#bb9af7",
+    "inputValidation.infoBorder":"#80FFDB",
     "inputValidation.warningBackground":"#0A0A0A",
     "inputValidation.warningBorder":"#FFAB40",
     "inputValidation.errorBackground":"#0A0A0A",
     "inputValidation.errorBorder":"#FF5252",
 
-    "pickerGroup.foreground":"#bb9af7",
+    "pickerGroup.foreground":"#80FFDB",
     "pickerGroup.border":"#40c3ff00",
 
     "extensionButton.prominentBackground":"#80FFDB",
@@ -174,7 +174,7 @@
         "string.quoted.docstring.multi.python punctuation.definition.string.end.python"
       ],
       "settings": {
-        "foreground": "#848bbd",
+        "foreground": "#9fa5d3",
         "fontStyle": "italic"
       }
     },
@@ -186,7 +186,7 @@
         "punctuation.definition.string"
       ],
       "settings": {
-        "foreground": "#ff8b39"
+        "foreground": "#ff8b39",
       }
     },
     {
@@ -215,21 +215,23 @@
       "name": "Parameter",
       "scope": "variable.parameter",
       "settings": {
-        "fontStyle": "italic"
+        "fontStyle": "italic underline"
       }
     },
     {
       "name": "Storage (declaration or modifier keyword)",
       "scope": ["storage.type", "storage.modifier"],
       "settings": {
-        "foreground": "#fede5d"
+        "foreground": "#fede5d",
+        "fontStyle": "bold"
       }
     },
     {
       "name": "Constant",
       "scope": "constant",
       "settings": {
-        "foreground": "#f97e72"
+        "foreground": "#f97e72",
+        "fontStyle": "bold"
       }
     },
     {
@@ -300,7 +302,8 @@
       "name": "Class",
       "scope": ["entity.name.type", "meta.attribute.class.html"],
       "settings": {
-        "foreground": "#fe4450"
+        "foreground": "#fe4450",
+        "fontStyle": "bold"
       }
     },
     {

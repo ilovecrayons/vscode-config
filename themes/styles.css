@@ -595,7 +595,7 @@ div.monaco-workbench button.monaco-button {
 
 /* Activity Bar active icon */
 .monaco-workbench .activitybar > .content .monaco-action-bar .action-item.checked .action-label {
-  color: #bb9af7 !important;
+  color: #72EFDD !important;
   text-shadow: 0 0 8px rgba(187, 154, 247, 0.4) !important;
 }
 
