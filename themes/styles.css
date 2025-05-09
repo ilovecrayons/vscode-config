@@ -746,21 +746,6 @@ div.monaco-workbench button.monaco-button {
   /* background-color: rgba(122, 162, 247, 0.1) !important; */
 }
 
-/* Add a subtle gradient glow to the top of the application */
-.monaco-workbench .part.titlebar::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 140px; /* Stop before window controls area */
-  bottom: 0;
-  height: 2px;
-  background: linear-gradient(to right, #f72585, #b5179e, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0);
-  opacity: 0.7;
-  box-shadow: 0 0 8px rgba(122, 162, 247, 0.4);
-  z-index: 2; /* Ensure the bottom border remains visible */
-  position: relative; /* Add this to support the ray effect */
-  overflow: hidden; /* Contain the ray of light effect */
-}
 
 /* Add the light ray effect to the titlebar border */
 .monaco-workbench .part.titlebar::after {
@@ -832,10 +817,10 @@ div.monaco-workbench button.monaco-button {
   content: "";
   position: absolute;
   left: 0;
-  right: 140px; /* Stop before window controls area */
+  right: 0; 
   bottom: 0;
   height: 2px;
-  background: linear-gradient(to right, #f72585, #b5179e, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0);
+  background: linear-gradient(to right, #f72585, #b5179e, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0, #000000, #000000);
   opacity: 0.7;
   box-shadow: 0 0 8px rgba(122, 162, 247, 0.4);
   z-index: 2; /* Ensure the bottom border remains visible */
