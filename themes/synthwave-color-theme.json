@@ -4,21 +4,21 @@
   "semanticHighlighting": true,
   "colors": {
     "activityBar.background":"#060609",
-    "activityBar.foreground":"#eeecf5",
+    "activityBar.foreground":"#ffffff",
     "activityBar.activeBorder":"#eeecf5",
-    "activityBar.activeFocusBorder":"#eeecf5",
-    "activityBarBadge.background":"#000000",
+    "activityBar.activeFocusBorder":"#ffffff",
+    "activityBarBadge.background":"#bc0000",
     "activityBarBadge.foreground":"#ffffff",
 
     "welcomePage.tileBackground":"#0e0e14",
     "welcomePage.tileHoverBackground":"#13131b",
 
     "badge.background":"#1a1a26",
-    "badge.foreground":"#eeecf5",
+    "badge.foreground":"#ffffff",
 
-    "button.background":"#00fff2cb",
+    "button.background":"#ff0000cb",
     "button.foreground":"#000000",
-    "button.hoverBackground":"#00e5ff",
+    "button.hoverBackground":"#ff000087",
 
     "dropdown.background":"#060609",
     "dropdown.border":"#060609",
@@ -31,7 +31,7 @@
     "editor.foreground":"#ffffff",
     "editorError.foreground":"#FF5252",
     "editorWarning.foreground":"#FFAB40",
-    "editorRuler.foreground":"#ffffff66",
+    "editorRuler.foreground":"#ffffff79",
     "editorOverviewRuler.border":"#ff000000",
     "editorOverviewRuler.modifiedForeground":"#40C4FF00",
     "editorOverviewRuler.addedForeground":"#47ffa000",
@@ -96,7 +96,7 @@
 
     "sideBar.background":"#0e0e14",
     "sideBar.border":"#0e0e14",
-    "sideBar.foreground":"#ffffff99",
+    "sideBar.foreground":"#ffffffcb",
     "sideBarTitle.foreground":"#f8f8f0",
     "sideBarSectionHeader.background":"#0e0e14",
     "sideBarSectionHeader.foreground":"#ffffff",
@@ -144,12 +144,12 @@
     "pickerGroup.foreground":"#bb9af7",
     "pickerGroup.border":"#40c3ff00",
 
-    "extensionButton.prominentBackground":"#bb9af7cb",
-    "extensionButton.prominentHoverBackground":"#bb9af7cb",
-    "extensionButton.prominentForeground":"#bb9af7cb",
-    "editorLink.activeForeground":"#bb9af7",
+    "extensionButton.prominentBackground":"#ff2222cb",
+    "extensionButton.prominentHoverBackground":"#ff1111cb",
+    "extensionButton.prominentForeground":"#ffffff",
+    "editorLink.activeForeground":"#e10000",
 
-    "textLink.foreground":"#bb9af7",
+    "textLink.foreground":"#e10000",
     "textLink.activeForeground":"#ff8f3c",
 
     "gitDecoration.modifiedResourceForeground": "#ffb77cee",

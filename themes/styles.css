@@ -320,10 +320,16 @@
   .part.statusbar {
   background: linear-gradient(
     90deg,
-    #2a3253,
-    #2d2c4a,
-    #2e2b4a,
-    #2a3253
+    #7400B8,
+    #6930C3,
+    #5E60CE,
+    #5390D9,
+    #4EA8DE,
+    #48BFE3,
+    #56CFE1,
+    #64DFDF,
+    #72EFDD,
+    #80FFDB
   ) !important;
   box-shadow: 0 0 6px rgba(122, 162, 247, 0.15);
   position: relative;
@@ -337,10 +343,17 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(
-    to right,
-    rgba(122, 162, 247, 0.08),
-    rgba(187, 154, 247, 0.08),
-    rgba(122, 162, 247, 0.08)
+    90deg,
+    #7400B8 0%,
+    #6930C3 10%,
+    #5E60CE 20%,
+    #5390D9 30%,
+    #4EA8DE 40%,
+    #48BFE3 50%,
+    #56CFE1 60%,
+    #64DFDF 70%,
+    #72EFDD 80%,
+    #80FFDB 100%
   );
   transform: translateX(-100%);
   animation: statusBarGlow 10s ease-in-out infinite; /* Changed from 3s to 10s to make it significantly slower */
@@ -570,7 +583,7 @@ div.monaco-workbench button.monaco-button {
 
 /* Activity Bar (left sidebar) styling */
 .monaco-workbench .activitybar > .content {
-  background: linear-gradient(to bottom, #1a1b26, #1f2335, #24283b, #1f2335) !important;
+  background: linear-gradient(to bottom, #7400B8, #6930C3, #5E60CE, #5390D9, #4EA8DE, #48BFE3, #56CFE1, #64DFDF, #72EFDD, #80FFDB) !important;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2) !important;
 }
 
@@ -602,9 +615,16 @@ div.monaco-workbench button.monaco-button {
   bottom: 0;
   background: linear-gradient(
     to top,
-    rgba(122, 162, 247, 0.08),
-    rgba(187, 154, 247, 0.08),
-    rgba(122, 162, 247, 0.08)
+    #7400B8 0%,
+    #6930C3 10%,
+    #5E60CE 20%,
+    #5390D9 30%,
+    #4EA8DE 40%,
+    #48BFE3 50%,
+    #56CFE1 60%,
+    #64DFDF 70%,
+    #72EFDD 80%,
+    #80FFDB 100%
   );
   transform: translateY(100%);
   animation: activityBarGlow 10s ease-in-out infinite;
@@ -734,7 +754,7 @@ div.monaco-workbench button.monaco-button {
   right: 140px; /* Stop before window controls area */
   bottom: 0;
   height: 2px;
-  background: linear-gradient(to right, #7aa2f7, #ad8ee6, #bb9af7);
+  background: linear-gradient(to right, #7400B8, #6930C3, #5E60CE, #5390D9, #4EA8DE, #48BFE3, #56CFE1, #64DFDF, #72EFDD, #80FFDB);
   opacity: 0.7;
   box-shadow: 0 0 8px rgba(122, 162, 247, 0.4);
   z-index: 2; /* Ensure the bottom border remains visible */
@@ -815,7 +835,7 @@ div.monaco-workbench button.monaco-button {
   right: 140px; /* Stop before window controls area */
   bottom: 0;
   height: 2px;
-  background: linear-gradient(to right, #7aa2f7, #ad8ee6, #bb9af7);
+  background: linear-gradient(to right, #7400B8, #6930C3, #5E60CE, #5390D9, #4EA8DE, #48BFE3, #56CFE1, #64DFDF, #72EFDD, #80FFDB);
   opacity: 0.7;
   box-shadow: 0 0 8px rgba(122, 162, 247, 0.4);
   z-index: 2; /* Ensure the bottom border remains visible */
