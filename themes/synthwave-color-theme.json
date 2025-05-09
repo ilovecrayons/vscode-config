@@ -16,9 +16,9 @@
     "badge.background":"#1a1a26",
     "badge.foreground":"#ffffff",
 
-    "button.background":"#ff0000cb",
+    "button.background":"#80FFDB",
     "button.foreground":"#000000",
-    "button.hoverBackground":"#ff000087",
+    "button.hoverBackground":"#80FFDB",
 
     "dropdown.background":"#060609",
     "dropdown.border":"#060609",
@@ -27,7 +27,7 @@
     "diffEditor.insertedTextBackground":"#00919b15",
     "diffEditor.removedTextBackground":"#c3115520",
 
-    "editor.background":"#17171f",
+    "editor.background":"#0d0d12",
     "editor.foreground":"#ffffff",
     "editorError.foreground":"#FF5252",
     "editorWarning.foreground":"#FFAB40",
@@ -144,12 +144,12 @@
     "pickerGroup.foreground":"#bb9af7",
     "pickerGroup.border":"#40c3ff00",
 
-    "extensionButton.prominentBackground":"#ff2222cb",
-    "extensionButton.prominentHoverBackground":"#ff1111cb",
-    "extensionButton.prominentForeground":"#ffffff",
-    "editorLink.activeForeground":"#e10000",
+    "extensionButton.prominentBackground":"#80FFDB",
+    "extensionButton.prominentHoverBackground":"#80FFDB",
+    "extensionButton.prominentForeground":"#000000",
+    "editorLink.activeForeground":"#80FFDB",
 
-    "textLink.foreground":"#e10000",
+    "textLink.foreground":"#80FFDB",
     "textLink.activeForeground":"#ff8f3c",
 
     "gitDecoration.modifiedResourceForeground": "#ffb77cee",
