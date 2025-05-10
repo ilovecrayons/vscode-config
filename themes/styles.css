@@ -807,7 +807,7 @@ div.monaco-workbench button.monaco-button {
   }
 }
 
-/* Explorer active file selection styling */
+/* Explorer active file selection styling - SIMULTANEOUS drawing animation */
 .monaco-list-row.focused,
 .monaco-list-row.selected,
 .monaco-tree-row.focused,
@@ -817,10 +817,49 @@ div.monaco-workbench button.monaco-button {
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
-  overflow: hidden !important; /* Important to contain the animations */
 }
 
-/* Border drawing animation */
+/* Bottom border - draw from right to left */
+.monaco-list-row.focused > *::before,
+.monaco-list-row.selected > *::before,
+.monaco-tree-row.focused > *::before,
+.monaco-tree-row.selected > *::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0; /* Start from right */
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, #f72585, #b5179e, #7209b7, #560bad, #480ca8);
+  z-index: 9;
+  box-shadow: 0 0 6px rgba(122, 162, 247, 0.3);
+  transform-origin: right;
+  transform: scaleX(0); /* Start with zero width */
+  animation: drawBorderBottom 0.4s ease-out forwards;
+  animation-delay: 0s;
+}
+
+/* Left border - draw from bottom to top */
+.monaco-list-row.focused > *::after,
+.monaco-list-row.selected > *::after,
+.monaco-tree-row.focused > *::after,
+.monaco-tree-row.selected > *::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Start from bottom */
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(0deg, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0);
+  z-index: 9;
+  box-shadow: 0 0 6px rgba(122, 162, 247, 0.3);
+  transform-origin: bottom;
+  transform: scaleY(0); /* Start with zero height */
+  animation: drawBorderLeft 0.4s ease-out forwards;
+  animation-delay: 0s;
+}
+
+/* Top border - draw from right to left */
 .monaco-list-row.focused::before,
 .monaco-list-row.selected::before,
 .monaco-tree-row.focused::before,
@@ -828,103 +867,76 @@ div.monaco-workbench button.monaco-button {
   content: "";
   position: absolute;
   top: 0;
-  left: 4px; /* Fix the left offset */
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
+  right: 0; /* Start from right */
+  width: calc(100% - 4px);
+  height: 2px;
+  background: linear-gradient(90deg, #f72585, #b5179e, #7209b7, #560bad, #480ca8);
   z-index: 9;
-  border: 2px solid;
-  border-image: linear-gradient(90deg, #f72585, #b5179e, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0) 1;
-  border-image-slice: 1;
-  clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
-  animation: drawExplorerBorder 0.6s ease-out forwards;
+  box-shadow: 0 0 6px rgba(122, 162, 247, 0.3);
+  transform-origin: right;
+  transform: scaleX(0); /* Start with zero width */
+  animation: drawBorderTop 0.4s ease-out forwards;
+  animation-delay: 0s;
 }
 
-/* Traveling gradient animation without glow */
-.monaco-list-row.focused > div::after,
-.monaco-list-row.selected > div::after,
-.monaco-tree-row.focused > div::after,
-.monaco-tree-row.selected > div::after {
+/* Right border - draw from bottom to top */
+.monaco-list-row.focused::after,
+.monaco-list-row.selected::after,
+.monaco-tree-row.focused::after,
+.monaco-tree-row.selected::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 0; /* Start from bottom */
   right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 10;
-  border: 2px solid transparent;
-  animation: explorerTravelingGradient 2s linear infinite;
-  animation-delay: 0.6s; /* Starts after border drawing completes */
-}
-
-/* New animation for the border drawing */
-@keyframes drawExplorerBorder {
-  0% {
-    clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%);
-  }
-  25% {
-    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-  }
-  50% {
-    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 100%);
-  }
-  75% {
-    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
-  }
-  100% {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-}
-
-/* Animation for traveling gradient without glow */
-@keyframes explorerTravelingGradient {
-  0% {
-    border-image: linear-gradient(90deg, #f72585, #b5179e, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0) 1;
-  }
-  25% {
-    border-image: linear-gradient(180deg, #b5179e, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0, #f72585) 1;
-  }
-  50% {
-    border-image: linear-gradient(270deg, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0, #f72585, #b5179e) 1;
-  }
-  75% {
-    border-image: linear-gradient(360deg, #3f37c9, #4361ee, #4895ef, #4cc9f0, #f72585, #b5179e, #7209b7, #560bad, #480ca8, #3a0ca3) 1;
-  }
-  100% {
-    border-image: linear-gradient(90deg, #f72585, #b5179e, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0) 1;
-  }
-}
-
-/* Remove the conflicting rules */
-.monaco-list-row.focused::after,
-.monaco-list-row.selected::after,
-.monaco-tree-row.focused::after,
-.monaco-tree-row.selected::after {
-  display: none !important;
-}
-
-/* Create a traveling light element */
-.monaco-list-row.focused::after,
-.monaco-list-row.selected::after,
-.monaco-tree-row.focused::after,
-.monaco-tree-row.selected::after {
-  content: '';
-  position: absolute;
   width: 2px;
-  height: 0;
-  background: linear-gradient(0deg, #f72585, #b5179e, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0);
-  z-index: 10;
-  box-shadow: 0 0 10px rgba(122, 162, 247, 0.5);
-  animation: explorerRightBorder 0.125s ease-out forwards, explorerTravelingLight 3s linear infinite;
-  animation-delay: 0.125s, 0.5s;
-  pointer-events: none;
+  height: 100%;
+  background: linear-gradient(180deg, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0);
+  z-index: 9;
+  box-shadow: 0 0 6px rgba(122, 162, 247, 0.3);
+  transform-origin: bottom;
+  transform: scaleY(0); /* Start with zero height */
+  animation: drawBorderRight 0.4s ease-out forwards;
+  animation-delay: 0s;
 }
 
-/* Remove the old individual gradient animations that are no longer needed */
-/* @keyframes explorerBorderGradient {...} */
-/* @keyframes explorerReverseBorderGradient {...} */
-/* @keyframes explorerVerticalBorderGradient {...} */
+/* Border drawing animations - All starting from zero and growing */
+@keyframes drawBorderTop {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes drawBorderRight {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes drawBorderBottom {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes drawBorderLeft {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* Remove any other conflicting rules at the bottom of the file */
 
 
 
