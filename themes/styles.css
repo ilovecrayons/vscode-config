@@ -69,12 +69,12 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #7aa2f7, #ad8ee6, #bb9af7);
+  background: linear-gradient(90deg, #f72585, #b5179e, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0);
   background-size: 200% 100%;
   box-shadow: 0 0 8px rgba(122, 162, 247, 0.3);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: left;
-  animation: tabIndicator 0.3s ease-out, gradientMove 1s linear infinite;
+  animation: tabIndicator 0.5s ease-out, gradientMove 1s linear infinite;
 }
 
 @keyframes tabIndicator {
@@ -634,7 +634,7 @@ div.monaco-workbench button.monaco-button {
 
 /* activity bar notification badge */
 .monaco-workbench .activitybar>.content .monaco-action-bar .badge .badge-content {
-  background: linear-gradient(45deg, rgba(105, 155, 255, 0.85), rgba(165, 125, 245, 0.8), rgba(190, 145, 255, 0.85)) !important;
+  background: linear-gradient(45deg, rgba(105, 155, 255, 0.85), rgba(165, 125, 245, 0.8), rgba(190, 145, 255, 0.85),#4cc9f0) !important;
 }
 
 /* Menu Bar (top bar) styling - improved with more specific selectors */
@@ -645,77 +645,17 @@ div.monaco-workbench button.monaco-button {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Override window controls background - more comprehensive approach */
-/* Windows style controls */
-.monaco-workbench div.window-appicon,
-.monaco-workbench .window-controls-container,
-.monaco-workbench .titlebar div[aria-label="Minimize Window"],
-.monaco-workbench .titlebar div[aria-label="Maximize Window"], 
-.monaco-workbench .titlebar div[aria-label="Restore Window"],
-.monaco-workbench .titlebar div[aria-label="Close Window"],
-.monaco-workbench .part.titlebar div.window-controls,
-.monaco-workbench .part.titlebar div.resizer,
-.monaco-workbench div.windows-appicon,
-.monaco-workbench div.window-title,
-.monaco-workbench div.draggable, 
-.monaco-workbench .titlebar > div,
-.monaco-workbench .titlebar-container > div {
-  background: transparent !important;
-  background-color: transparent !important;
-}
 
-/* Add pseudo-elements to handle overlays */
-.monaco-workbench .part.titlebar::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 140px; /* Wide enough to cover the window control area */
-  height: 100%;
-  background: linear-gradient(90deg, #1a1b26, #1f2335, #24283b, #1f2335) !important;
-  z-index: 1;
-  pointer-events: none; /* Make sure it doesn't block clicks */
-}
 
-/* Ensure window controls are on top of our pseudo-element */
-.monaco-workbench .window-controls-container,
-.monaco-workbench div.window-appicon,
-.monaco-workbench .titlebar .window-controls,
-.monaco-workbench .titlebar-container .window-controls-container {
-  z-index: 2 !important;
-  position: relative !important;
-}
 
-/* Style for window control icons */
-.monaco-workbench .window-controls-container .window-icon,
-.monaco-workbench .window-controls-container .window-close,
-.monaco-workbench .window-controls-container .window-maximize,
-.monaco-workbench .window-controls-container .window-minimize,
-.monaco-workbench .window-controls-container .window-icon * {
-  color: #7982a9 !important;
-  opacity: 1 !important;
-  background-color: transparent !important;
-  transition: all 0.2s ease !important;
-}
 
-/* Hover states for window controls */
-.monaco-workbench .window-controls-container .window-icon:hover,
-.monaco-workbench .window-controls-container .window-maximize:hover,
-.monaco-workbench .window-controls-container .window-minimize:hover {
-  color: #c0caf5 !important;
-  background-color: rgba(122, 162, 247, 0.1) !important;
-}
 
-.monaco-workbench .window-controls-container .window-close:hover {
-  color: #ffffff !important;
-  background-color: rgba(255, 95, 95, 0.6) !important;
-}
 
-/* Extra styles for macOS traffic lights if applicable */
-.monaco-workbench .titlebar.mac .window-controls-container .window-icon,
-.monaco-workbench .part.titlebar.mac .window-controls-container {
-  background-color: transparent !important;
-}
+
+
+
+
+
 
 /* Menu Bar items */
 .monaco-workbench .menubar > .menubar-menu-button {
@@ -760,7 +700,7 @@ div.monaco-workbench button.monaco-button {
   right: 0;
   width: 140px; /* Wide enough to cover the window control area */
   height: 100%;
-  background: linear-gradient(90deg, #1a1b26, #1f2335, #24283b, #1f2335) !important;
+  background: linear-gradient(90deg, #1a1b26, #1f2335, #24283b, #24283b) !important;
   z-index: 1;
   pointer-events: none; /* Make sure it doesn't block clicks */
 }
@@ -770,7 +710,7 @@ div.monaco-workbench button.monaco-button {
   content: "";
   position: absolute;
   left: 0;
-  right: 140px; /* Match the gradient width */
+  right: 0; /* Match the gradient width */
   bottom: 0;
   height: 2px;
   background: linear-gradient(
