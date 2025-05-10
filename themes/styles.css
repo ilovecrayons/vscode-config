@@ -353,10 +353,22 @@
     rgba(63,55,201,0.13) 60%,
     rgba(67,97,238,0.13) 70%,
     rgba(72,149,239,0.13) 80%,
-    rgba(76,201,240,0.13) 100%
+    rgba(76,201,240,0.13) 90%,
+    rgba(247,37,133,0.13) 100%,
+    /* repeat the entire sequence for seamless loop */
+    rgba(181,23,158,0.13) 110%,
+    rgba(114,9,183,0.13) 120%,
+    rgba(86,11,173,0.13) 130%,
+    rgba(72,12,168,0.13) 140%,
+    rgba(58,12,163,0.13) 150%,
+    rgba(63,55,201,0.13) 160%,
+    rgba(67,97,238,0.13) 170%,
+    rgba(72,149,239,0.13) 180%,
+    rgba(76,201,240,0.13) 190%,
+    rgba(247,37,133,0.13) 200%
   );
-  transform: translateX(-100%);
-  animation: statusBarGlow 10s ease-in-out infinite; /* Changed from 3s to 10s to make it significantly slower */
+  background-size: 200% 100%;
+  animation: statusBarInfiniteGlow 3s linear infinite;
   pointer-events: none; /* Add this to ensure clicks pass through */
   z-index: 1; /* Lower z-index */
 }
@@ -467,6 +479,14 @@
   }
 }
 
+@keyframes statusBarInfiniteGlow {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
 
 /* Extension + editor buttons (the ones that are by default blue by VSCode. an example of this would be the "initialize repository" button) gradient and glow*/
 .monaco-workbench .monaco-button.primary,
@@ -624,12 +644,33 @@ div.monaco-workbench button.monaco-button {
     rgba(63,55,201,0.13) 60%,
     rgba(67,97,238,0.13) 70%,
     rgba(72,149,239,0.13) 80%,
-    rgba(76,201,240,0.13) 100%
+    rgba(76,201,240,0.13) 90%,
+    rgba(247,37,133,0.13) 100%,
+    /* Complete second cycle for seamless loop */
+    rgba(181,23,158,0.13) 110%,
+    rgba(114,9,183,0.13) 120%,
+    rgba(86,11,173,0.13) 130%,
+    rgba(72,12,168,0.13) 140%,
+    rgba(58,12,163,0.13) 150%,
+    rgba(63,55,201,0.13) 160%,
+    rgba(67,97,238,0.13) 170%,
+    rgba(72,149,239,0.13) 180%,
+    rgba(76,201,240,0.13) 190%,
+    rgba(247,37,133,0.13) 200%
   );
-  transform: translateY(100%);
-  animation: activityBarGlow 10s ease-in-out infinite;
+  background-size: 100% 200%;
+  animation: activityBarInfiniteGlow 3s linear infinite;
   pointer-events: none;
   z-index: 1;
+}
+
+@keyframes activityBarInfiniteGlow {
+  0% {
+    background-position: 0% 200%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 /* activity bar notification badge */
@@ -644,18 +685,6 @@ div.monaco-workbench button.monaco-button {
   background: linear-gradient(90deg, #1a1b26, #1f2335, #24283b, #1f2335) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Menu Bar items */
 .monaco-workbench .menubar > .menubar-menu-button {
@@ -685,7 +714,6 @@ div.monaco-workbench button.monaco-button {
   color: #bb9af7 !important;
   /* background-color: rgba(122, 162, 247, 0.1) !important; */
 }
-
 
 /* Add the light ray effect to the titlebar border */
 .monaco-workbench .part.titlebar::after {
