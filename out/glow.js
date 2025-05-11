@@ -13,7 +13,6 @@
       return 0.5; // Default if something goes wrong
     }
   };
-
   // Apply brightness to hex color
   const applyBrightness = (hexColor, opacity, brightnessAdjustment) => {
     if (typeof hexColor !== 'string' || !hexColor.startsWith('#')) {
@@ -25,40 +24,43 @@
     const g = parseInt(hexColor.substr(3, 2), 16);
     const b = parseInt(hexColor.substr(5, 2), 16);
   
-    // Adjust brightness (simple implementation)
-    const adjust = (val) => Math.min(255, Math.max(0, Math.floor(val * brightnessAdjustment)));
+    // Enhanced brightness adjustment with boosted intensity
+    // Uses a more dynamic approach to increase glow while maintaining color character
+    const adjust = (val) => {
+      // Increase intensity while preserving color balance
+      const adjusted = val * brightnessAdjustment * 1.2;
+      return Math.min(255, Math.max(0, Math.floor(adjusted)));
+    };
     
     return `rgba(${adjust(r)}, ${adjust(g)}, ${adjust(b)}, ${opacity})`;
-  };
-
-  // Function to create glow styles with dynamic brightness
+  };  // Function to create glow styles with dynamic brightness
   const createGlowStyles = (brightness) => {
-    const b = brightness + 0.5; // normalize to 0.5-1.5 range for glow intensity
+    const b = brightness * 1.5 + 0.5; // normalize to 0.5-2.0 range for increased glow intensity
     
     return {
-      // Variable - #00ff95 (green)
-      '00ff95': `color: #00ff95; text-shadow: 0 0 2px #100c0f, 0 0 5px ${applyBrightness('#00ff95', 0.5 * b, b)}, 0 0 10px ${applyBrightness('#00ff95', 0.3 * b, b)}; backface-visibility: hidden;`,
+      // Variable - #00ff95 (green) - NO GLOW FOR VARIABLES
+      '00ff95': `color: #00ff95; backface-visibility: hidden;`,
   
-      // Language variable - #fe4450 (red)
-      'fe4450': `color: #fe4450; text-shadow: 0 0 2px #000, 0 0 5px ${applyBrightness('#fe4450', 0.5 * b, b)}, 0 0 15px ${applyBrightness('#fe4450', 0.25 * b, b)}; backface-visibility: hidden;`,
+      // Language variable - #fe4450 (red) - KEEP GLOW FOR LANGUAGE KEYWORDS
+      'fe4450': `color: #fe4450; text-shadow: 0 0 2px #000, 0 0 5px ${applyBrightness('#fe4450', 0.7 * b, b)}, 0 0 15px ${applyBrightness('#fe4450', 0.5 * b, b)}, 0 0 25px ${applyBrightness('#fe4450', 0.35 * b, b)}; backface-visibility: hidden;`,
       
-      // Storage / Storage modifier - #fede5d (yellow)
-      'fede5d': `color: #fede5d; text-shadow: 0 0 2px #100c0f, 0 0 5px ${applyBrightness('#fede5d', 0.5 * b, b)}, 0 0 10px ${applyBrightness('#fede5d', 0.3 * b, b)}; backface-visibility: hidden;`,
+      // Storage / Storage modifier - #fede5d (yellow) - KEEP GLOW FOR KEYWORDS
+      'fede5d': `color: #fede5d; text-shadow: 0 0 2px #100c0f, 0 0 5px ${applyBrightness('#fede5d', 0.7 * b, b)}, 0 0 10px ${applyBrightness('#fede5d', 0.5 * b, b)}, 0 0 20px ${applyBrightness('#fede5d', 0.3 * b, b)}; backface-visibility: hidden;`,
       
-      // Constant / Numbers - #f97e72 (orange/coral)
-      'f97e72': `color: #f97e72; text-shadow: 0 0 2px #100c0f, 0 0 5px ${applyBrightness('#f97e72', 0.5 * b, b)}, 0 0 10px ${applyBrightness('#f97e72', 0.3 * b, b)}; backface-visibility: hidden;`,
+      // Constant / Numbers - #f97e72 (orange/coral) - NO GLOW FOR LITERALS
+      'f97e72': `color: #f97e72; backface-visibility: hidden;`,
       
-      // Character escape - #36f9f6 (cyan)
-      '36f9f6': `color: #36f9f6; text-shadow: 0 0 2px #001716, 0 0 5px ${applyBrightness('#36f9f6', 0.5 * b, b)}, 0 0 10px ${applyBrightness('#36f9f6', 0.25 * b, b)}; backface-visibility: hidden;`,
+      // Character escape - #36f9f6 (cyan) - KEEP GLOW FOR SYNTAX ELEMENTS
+      '36f9f6': `color: #36f9f6; text-shadow: 0 0 2px #001716, 0 0 5px ${applyBrightness('#36f9f6', 0.7 * b, b)}, 0 0 10px ${applyBrightness('#36f9f6', 0.5 * b, b)}, 0 0 20px ${applyBrightness('#36f9f6', 0.3 * b, b)}; backface-visibility: hidden;`,
       
-      // HTML/XML tag - #72f1b8 (light green)
-      '72f1b8': `color: #72f1b8; text-shadow: 0 0 2px #100c0f, 0 0 5px ${applyBrightness('#72f1b8', 0.5 * b, b)}, 0 0 10px ${applyBrightness('#72f1b8', 0.3 * b, b)}; backface-visibility: hidden;`,
+      // HTML/XML tag - #72f1b8 (light green) - KEEP GLOW FOR TAGS
+      '72f1b8': `color: #72f1b8; text-shadow: 0 0 2px #100c0f, 0 0 5px ${applyBrightness('#72f1b8', 0.7 * b, b)}, 0 0 10px ${applyBrightness('#72f1b8', 0.5 * b, b)}, 0 0 20px ${applyBrightness('#72f1b8', 0.3 * b, b)}; backface-visibility: hidden;`,
       
-      // Support variable / Object property - #ff7edb (pink)
-      'ff7edb': `color: #ff7edb; text-shadow: 0 0 2px #100c0f, 0 0 5px ${applyBrightness('#ff7edb', 0.5 * b, b)}, 0 0 10px ${applyBrightness('#ff7edb', 0.3 * b, b)}; backface-visibility: hidden;`,
+      // Support variable / Object property - #ff7edb (pink) - NO GLOW FOR OBJECT PROPERTIES
+      'ff7edb': `color: #ff7edb; backface-visibility: hidden;`,
       
-      // String - #ff8b39 (orange)
-      'ff8b39': `color: #ff8b39; text-shadow: 0 0 2px #100c0f, 0 0 5px ${applyBrightness('#ff8b39', 0.5 * b, b)}, 0 0 10px ${applyBrightness('#ff8b39', 0.3 * b, b)}; backface-visibility: hidden;`,
+      // String - #ff8b39 (orange) - NO GLOW FOR STRING LITERALS
+      'ff8b39': `color: #ff8b39; backface-visibility: hidden;`,
     };
   };
 
