@@ -482,6 +482,65 @@ button.monaco-button.primary {
 .monaco-workbench .monaco-dialog-box .action-button:hover,
 .monaco-workbench .extensions-viewlet .monaco-button:hover,
 .monaco-workbench .scm-viewlet .monaco-button:hover,
+
+/* ASCII Binary Visualizer */
+#ascii-binary-visualizer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  height: 100%;
+}
+
+#ascii-binary-visualizer .binary-slit {
+  width: 2px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.25);
+  margin: 0 2px;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* ASCII Binary Visualizer - Enhanced Visibility */
+#ascii-binary-visualizer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 10px !important;
+  height: 22px !important;
+  background-color: rgba(30, 30, 40, 0.7) !important;
+  border-radius: 4px !important;
+  padding: 0 6px !important;
+  z-index: 9999 !important;
+  box-shadow: 0 0 8px rgba(122, 162, 247, 0.5) !important;
+  pointer-events: none !important;
+}
+
+#ascii-binary-visualizer .binary-slit {
+  width: 2px !important;
+  height: 12px !important;
+  background-color: rgba(255, 255, 255, 0.35) !important;
+  margin: 0 2px !important;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+}
+
+/* Active slit appearance */
+#ascii-binary-visualizer .binary-slit.active {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 0 5px #fff, 0 0 10px rgba(122, 162, 247, 0.8) !important;
+  height: 15px !important;
+}
+
+/* Ensure the visualizer is visible in both light and dark themes */
+body.vs #ascii-binary-visualizer {
+  background-color: rgba(60, 60, 80, 0.8) !important;
+}
+
+body.vs-dark #ascii-binary-visualizer {
+  background-color: rgba(30, 30, 40, 0.7) !important;
+}
+
 .monaco-workbench .extension-editor .monaco-button:hover,
 .monaco-workbench .extensions .monaco-button:hover,
 body .monaco-workbench .monaco-button:hover,
@@ -937,6 +996,38 @@ div.monaco-workbench button.monaco-button {
     transform: scaleY(1) scaleX(1);
     filter: brightness(1);
   }
+}
+
+/* Add these styles to the bottom of the file to ensure visibility */
+
+/* Binary ASCII Visualizer - Guaranteed Visibility */
+#binary-ascii-overlay {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: flex !important;
+  pointer-events: none !important;
+  box-shadow: 0 0 10px rgba(122, 162, 247, 0.9), 0 0 20px rgba(0, 0, 0, 0.5) !important;
+  transform: translateZ(0) !important;
+  filter: drop-shadow(0 0 8px rgba(122, 162, 247, 0.5)) !important;
+}
+
+#binary-ascii-overlay * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#binary-ascii-overlay .binary-slit {
+  transition: all 0.15s ease-out !important;
+}
+
+/* Ensure iframe visibility if used */
+iframe[src^="javascript:void"] {
+  z-index: 2147483647 !important;
+  position: fixed !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 

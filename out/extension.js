@@ -46,33 +46,56 @@ function activate(context) {
             const appDir = path.dirname(vscode.env.appRoot);
             const base = path.join(appDir, 'app', 'out', 'vs', 'code');
             const htmlFile = path.join(base, ELECTRON_BASE, "workbench", WORKBENCH_FILENAME);
-            const jsFile = path.join(base, ELECTRON_BASE, "workbench", "typing-effect-glow.js");
+            const glowJsFile = path.join(base, ELECTRON_BASE, "workbench", "typing-effect-glow.js");
+            const effectsJsFile = path.join(base, ELECTRON_BASE, "workbench", "typing-effect-effects.js");
+            const binaryVisJsFile = path.join(base, ELECTRON_BASE, "workbench", "binary-ascii-vis.js");
+            const mainJsFile = path.join(base, ELECTRON_BASE, "workbench", "typing-effect-main.js");
             
             if (action === "enable") {
-                // Read our glow script
+                // Read our scripts
                 const glowScript = fs.readFileSync(path.join(context.extensionPath, "out", "glow.js"), "utf-8");
+                const effectsScript = fs.readFileSync(path.join(context.extensionPath, "out", "effects.js"), "utf-8");
+                const binaryVisScript = fs.readFileSync(path.join(context.extensionPath, "out", "binary-ascii-vis.js"), "utf-8");
+                const mainScript = fs.readFileSync(path.join(context.extensionPath, "out", "main.js"), "utf-8");
                 
-                // Write the script to VS Code's directory
-                fs.writeFileSync(jsFile, glowScript, "utf-8");
+                // Write the scripts to VS Code's directory
+                fs.writeFileSync(glowJsFile, glowScript, "utf-8");
+                fs.writeFileSync(effectsJsFile, effectsScript, "utf-8");
+                fs.writeFileSync(binaryVisJsFile, binaryVisScript, "utf-8");
+                fs.writeFileSync(mainJsFile, mainScript, "utf-8");
                 
-                // Check if script tag already exists
+                // Check if script tags already exist
                 const html = fs.readFileSync(htmlFile, "utf-8");
                 const isEnabled = html.includes("typing-effect-glow.js");
                 
                 if (!isEnabled) {
-                    // Add script tag to the workbench HTML
-                    let output = html.replace(/\<\/html\>/g, `\t<!-- TYPING EFFECT GLOW --><script src="typing-effect-glow.js"></script><!-- TYPING EFFECT GLOW END -->\n</html>`);
+                    // Add script tags to the workbench HTML
+                    let output = html.replace(/\<\/html\>/g, `\t<!-- TYPING EFFECT START -->
+\t<script src="binary-ascii-vis.js"></script>
+\t<script src="typing-effect-effects.js"></script>
+\t<script src="typing-effect-glow.js"></script>
+\t<script src="typing-effect-main.js"></script>
+\t<!-- TYPING EFFECT END -->\n</html>`);
                     fs.writeFileSync(htmlFile, output, "utf-8");
                 }
             } else if (action === "disable") {
-                // Remove the script tag if it exists
+                // Remove the script tags if they exist
                 const html = fs.readFileSync(htmlFile, "utf-8");
-                const output = html.replace(/<!-- TYPING EFFECT GLOW --><script src="typing-effect-glow.js"><\/script><!-- TYPING EFFECT GLOW END -->\n/g, '');
+                const output = html.replace(/<!-- TYPING EFFECT START -->[\s\S]*?<!-- TYPING EFFECT END -->\n/g, '');
                 fs.writeFileSync(htmlFile, output, "utf-8");
                 
-                // Delete the JS file if it exists
-                if (fs.existsSync(jsFile)) {
-                    fs.unlinkSync(jsFile);
+                // Delete the JS files if they exist
+                if (fs.existsSync(glowJsFile)) {
+                    fs.unlinkSync(glowJsFile);
+                }
+                if (fs.existsSync(effectsJsFile)) {
+                    fs.unlinkSync(effectsJsFile);
+                }
+                if (fs.existsSync(binaryVisJsFile)) {
+                    fs.unlinkSync(binaryVisJsFile);
+                }
+                if (fs.existsSync(mainJsFile)) {
+                    fs.unlinkSync(mainJsFile);
                 }
             }
         } catch (error) {
@@ -86,21 +109,24 @@ function activate(context) {
             }
         }
     };
-    // Tự động enable khi extension được cài đặt
+    // Auto-enable when extension is installed
     const autoEnable = async () => {
         const cssPath = path.join(context.extensionPath, "themes", "styles.css");
         const cssUri = `file:///${cssPath.replace(/\\/g, "/")}`;
         await handleCssImports("enable", cssUri);
         
-        // Enable glow effect
+        // Enable glow effect and binary ASCII visualization
         await handleGlowInjection("enable");
         
-        // Hiển thị thông báo yêu cầu reload
-        const action = await vscode.window.showInformationMessage("Typing Effect và Syntax Glow đã được bật. Vui lòng reload VS Code để áp dụng thay đổi.", "Reload");
+        // Show notification requesting reload
+        const action = await vscode.window.showInformationMessage(
+            "Typing Effect, Syntax Glow, and ASCII Binary Visualizer have been enabled. Please reload VS Code to apply changes.", 
+            "Reload"
+        );
         if (action === "Reload") {
             await vscode.commands.executeCommand("workbench.action.reloadWindow");
         }
-    };
+    }
     // Gọi autoEnable khi extension được kích hoạt
     autoEnable();
     // Command handlers

@@ -43,6 +43,14 @@
 				"command": "vscode-typing-effect.disableGlow",
 				"title": "Disable Syntax Glow",
 				"category": "Typing Effect"
+			},
+			{
+				"command": "typingEffect.enable",
+				"title": "Enable Typing Effect"
+			},
+			{
+				"command": "typingEffect.disable",
+				"title": "Disable Typing Effect"
 			}
 		],
 		"configuration": {
@@ -59,7 +67,7 @@
 		}
 	},
 	"activationEvents": [
-		"onStartupFinished"
+		"*"
 	],
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
