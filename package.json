@@ -33,8 +33,30 @@
 				"command": "vscode-typing-effect.disable",
 				"title": "Typing Effect: Disable",
 				"category": "Typing Effect"
+			},
+			{
+				"command": "vscode-typing-effect.enableGlow",
+				"title": "Enable Syntax Glow",
+				"category": "Typing Effect"
+			},
+			{
+				"command": "vscode-typing-effect.disableGlow",
+				"title": "Disable Syntax Glow",
+				"category": "Typing Effect"
 			}
-		]
+		],
+		"configuration": {
+			"title": "VS Code Typing Effect",
+			"properties": {
+				"typingEffect.glowBrightness": {
+					"type": "number",
+					"default": 0.5,
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Brightness of the syntax glow effect (0-1)"
+				}
+			}
+		}
 	},
 	"activationEvents": [
 		"onStartupFinished"

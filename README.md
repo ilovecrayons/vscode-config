@@ -1,6 +1,6 @@
 # VS Code Typing Effect
 
-A Visual Studio Code extension that adds beautiful typing effects to your editor.
+A Visual Studio Code extension that adds beautiful typing effects to your editor with optional syntax highlighting glow.
 
 ## Features
 
@@ -8,6 +8,8 @@ A Visual Studio Code extension that adds beautiful typing effects to your editor
 - Text sparkle animation when typing
 - Smooth typing animations
 - Custom styling for better visual feedback
+- Neon syntax highlighting glow similar to Synthwave '84
+- Configurable glow brightness
 
 ## Requirements
 
@@ -23,12 +25,23 @@ This extension requires the [Custom CSS and JS Loader](https://marketplace.visua
 ## Usage
 
 1. Open Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on macOS)
-2. Type "Enable Typing Effect"
-3. Press Enter to activate the typing effects
+2. Type "Enable Typing Effect" to activate both typing effects and syntax glow
+3. Alternatively, use "Enable Syntax Glow" to activate only the neon syntax highlighting
 
 ## Configuration
 
 The extension comes with default settings optimized for a pleasant typing experience.
+
+You can customize the following settings:
+
+- `typingEffect.glowBrightness`: Control the intensity of the syntax highlighting glow (value between 0 and 1)
+
+## Available Commands
+
+- `Typing Effect: Enable` - Enable both typing effects and syntax glow
+- `Typing Effect: Disable` - Disable all effects
+- `Typing Effect: Enable Syntax Glow` - Enable only the syntax glow effect
+- `Typing Effect: Disable Syntax Glow` - Disable only the syntax glow effect
 
 ## License
 
