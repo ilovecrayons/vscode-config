@@ -107,7 +107,7 @@
     "statusBar.debuggingBackground":"#f99b72",
     "statusBar.debuggingForeground": "#060609",
 
-    "terminal.background":"#000000",
+    "terminal.background":"#0d0d12",
 
     "panel.border":"#262633",
     "panel.background":"#17171f",
@@ -208,14 +208,13 @@
       "scope": "variable.language",
       "settings": {
         "foreground": "#fe4450",
-        "fontStyle": "bold"
       }
     },
     {
       "name": "Parameter",
       "scope": "variable.parameter",
       "settings": {
-        "fontStyle": "italic underline"
+        "fontStyle": "italic"
       }
     },
     {
