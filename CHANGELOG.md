@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.1.0] - 2025-07-18
+
+### Removed
+
+- Removed the glow effect for syntax highlighting for performance reasons
+- Full custom release
+
 ## [0.0.5] - 2025-05-10
 
 ### Added
