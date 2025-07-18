@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 		<Metadata>
-			<Identity Language="en-US" Id="small-kitten-extension" Version="0.0.1" Publisher="ilovecrayons" />
+			<Identity Language="en-US" Id="small-kitten-extension" Version="0.1.0" Publisher="ilovecrayons" />
 			<DisplayName>Small kitten extension</DisplayName>
 			<Description xml:space="preserve">kawaii modifications</Description>
 			<Tags></Tags>
