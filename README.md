@@ -1,4 +1,4 @@
-# VS Code Typing Effect
+# Small Kitten Extension
 
 A Visual Studio Code extension that adds beautiful typing effects to your editor. Adapted from Nam Nguyen's *VSCode Typing Effect* extension.
 
