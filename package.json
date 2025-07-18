@@ -2,7 +2,7 @@
 	"name": "small-kitten-extension",
 	"displayName": "small kitten extension",
 	"description": "meow",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"publisher": "ilovecrayons",
 	"author": "ilovecrayons",
 	"license": "MIT",
@@ -52,8 +52,7 @@
 		],
 		"configuration": {
 			"title": "small kitten extension",
-			"properties": {
-			}
+			"properties": {}
 		}
 	},
 	"activationEvents": [
