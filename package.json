@@ -1,13 +1,28 @@
 {
-	"name": "vscode-typing-effect",
-	"displayName": "VS Code Typing Effect",
-	"description": "Add beautiful typing effects to VS Code editor",
-	"version": "0.0.4",
-	"publisher": "nampsh24",
+	"name": "small-kitten-extension",
+	"displayName": "small kitten extension",
+	"description": "meow",
+	"version": "1.0.0",
+	"publisher": "ilovecrayons",
+	"author": "ilovecrayons",
+	"license": "MIT",
+	"homepage": "https://github.com/ilovecrayons/vscode-config",
+	"bugs": {
+		"url": "https://github.com/ilovecrayons/vscode-config/issues"
+	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/nampsh24/vscode-typing-effect.git"
+		"url": "https://github.com/ilovecrayons/vscode-config.git"
 	},
+	"keywords": [
+		"typing",
+		"effect",
+		"animation",
+		"glow",
+		"synthwave",
+		"theme",
+		"visual"
+	],
 	"engines": {
 		"vscode": "^1.96.0"
 	},
@@ -18,43 +33,26 @@
 	"contributes": {
 		"themes": [
 			{
-				"label": "SynthWave '84",
+				"label": "small kitten theme",
 				"uiTheme": "vs-dark",
-				"path": "./themes/synthwave-color-theme.json"
+				"path": "./themes/small-kitten-theme.json"
 			}
 		],
 		"commands": [
 			{
-				"command": "vscode-typing-effect.enable",
-				"title": "Typing Effect: Enable",
-				"category": "Typing Effect"
+				"command": "small-kitten-extension.enableMeowing",
+				"title": "meowing: enable",
+				"category": "meowing effect"
 			},
 			{
-				"command": "vscode-typing-effect.disable",
-				"title": "Typing Effect: Disable",
-				"category": "Typing Effect"
-			},
-			{
-				"command": "vscode-typing-effect.enableGlow",
-				"title": "Enable Syntax Glow",
-				"category": "Typing Effect"
-			},
-			{
-				"command": "vscode-typing-effect.disableGlow",
-				"title": "Disable Syntax Glow",
-				"category": "Typing Effect"
+				"command": "small-kitten-extension.disableMeowing",
+				"title": "meowing: disable",
+				"category": "meowing effect"
 			}
 		],
 		"configuration": {
-			"title": "VS Code Typing Effect",
+			"title": "small kitten extension",
 			"properties": {
-				"typingEffect.glowBrightness": {
-					"type": "number",
-					"default": 0.5,
-					"minimum": 0,
-					"maximum": 1,
-					"description": "Brightness of the syntax glow effect (0-1)"
-				}
 			}
 		}
 	},
@@ -98,10 +96,5 @@
 			"supported": true,
 			"description": "This extension can modify user settings"
 		}
-	},
-	"__metadata": {
-		"installedTimestamp": 1745944346425,
-		"targetPlatform": "undefined",
-		"size": 43003
 	}
 }

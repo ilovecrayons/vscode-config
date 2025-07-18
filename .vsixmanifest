@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 		<Metadata>
-			<Identity Language="en-US" Id="vscode-typing-effect" Version="0.0.4" Publisher="nampsh24" />
-			<DisplayName>VS Code Typing Effect</DisplayName>
-			<Description xml:space="preserve">Add beautiful typing effects to VS Code editor</Description>
+			<Identity Language="en-US" Id="small-kitten-extension" Version="0.0.1" Publisher="ilovecrayons" />
+			<DisplayName>Small kitten extension</DisplayName>
+			<Description xml:space="preserve">kawaii modifications</Description>
 			<Tags></Tags>
 			<Categories>Other</Categories>
 			<GalleryFlags>Public</GalleryFlags>
@@ -16,11 +16,11 @@
 				<Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
 				
 				
-				<Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/nampsh24/vscode-typing-effect.git" />
-				<Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/nampsh24/vscode-typing-effect.git" />
-				<Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/nampsh24/vscode-typing-effect.git" />
-				<Property Id="Microsoft.VisualStudio.Services.Links.Support" Value="https://github.com/nampsh24/vscode-typing-effect/issues" />
-				<Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://github.com/nampsh24/vscode-typing-effect#readme" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/ilovecrayons/vscode-config.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/ilovecrayons/vscode-config.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/ilovecrayons/vscode-config.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Support" Value="https://github.com/ilovecrayons/vscode-config/issues" />
+
 				
 				
 				<Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />

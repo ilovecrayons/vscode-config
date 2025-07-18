@@ -1,11 +1,11 @@
 {
-  "name": "SynthWave 84",
+  "name": "small kitten theme",
   "type": "dark",
   "semanticHighlighting": true,
   "colors": {
     "activityBar.background":"#060609",
     "activityBar.foreground":"#ffffff",
-    "activityBar.activeBorder":"#eeecf5",
+    "activityBar.activeBorder":"#ff0000",
     "activityBar.activeFocusBorder":"#ffffff",
     "activityBarBadge.background":"#bc0000",
     "activityBarBadge.foreground":"#ffffff",
@@ -27,6 +27,8 @@
     "diffEditor.insertedTextBackground":"#00919b15",
     "diffEditor.removedTextBackground":"#c3115520",
 
+    "menu.selectionBackground":"#ff0000b1",
+
     "editor.background":"#0d0d12",
     "editor.foreground":"#ffffff",
     "editorError.foreground":"#FF5252",
@@ -43,9 +45,9 @@
     "editorGutter.addedBackground":"#47ffa0",
     "editorGutter.modifiedBackground":"#40C4FF",
     "editorGutter.deletedBackground":"#FF5252",
-    "editor.lineHighlightBackground":"#ffffff10",
-    "editor.lineHighlightBorder":"#ffffff05",
-    "editor.selectionBackground":"#3019ff73",
+    "editor.lineHighlightBackground":"#ffffff18",
+    "editor.lineHighlightBorder":"#ffffff19",
+    "editor.selectionBackground":"#005750bd",
     "editor.selectionHighlightBorder":"#06060930",
     "editor.selectionHighlightBackground":"#19abff45",
     "editor.wordHighlightBackground":"#ff000000",
@@ -113,18 +115,21 @@
     "panel.background":"#17171f",
     "panelTitle.activeBorder":"#ff8f3b",
 
-    "tab.border":"#ffffff00",
+    "tab.border":"#00000023",
     "tab.activeBackground":"#17171f",
-    "tab.activeBorder":"#9af7de",
-    "tab.inactiveBackground":"#17171f",
+    "tab.activeBorder":"#ff0000",
+    "tab.inactiveBackground":"#17171f", 
     "tab.activeForeground":"#fff",
     "tab.inactiveForeground":"#ffffff80",
-    "tab.hoverBackground":"#000",
+    "tab.hoverBackground":"#00000000",
 
-    "titleBar.activeBackground":"#060609",
+    "titleBar.activeBackground":"#090606",
     "titleBar.activeForeground":"#ffffff99",
     "titleBar.inactiveBackground":"#060609",
     "titleBar.inactiveForeground":"#ffffff99",
+    "titleBar.border":"#ff00009a",
+
+    
 
     "progressBar.background":"#47ffa0",
 
@@ -186,7 +191,7 @@
         "punctuation.definition.string"
       ],
       "settings": {
-        "foreground": "#ff8b39",
+        "foreground": "#ff8a37"
       }
     },
     {
@@ -200,14 +205,14 @@
       "name": "Variable",
       "scope": ["variable", "entity.name.variable"],
       "settings": {
-        "foreground": "#00ff95"
+        "foreground": "#5eff00"
       }
     },
     {
       "name": "Language variable",
       "scope": "variable.language",
       "settings": {
-        "foreground": "#fe4450",
+        "foreground": "#fe4450"
       }
     },
     {
@@ -316,7 +321,7 @@
       "name": "Function",
       "scope": ["entity.name.function", "variable.function"],
       "settings": {
-        "foreground": "#36f9f6"
+        "foreground": "#36ecf9"
       }
     },
     {
@@ -446,7 +451,7 @@
       "scope": "variable.other.constant.property.js, variable.other.property.js",
       "settings": {
         "foreground": "#2ee2fa"
-      },
+      }
     },
     {
       "name": "Color",
@@ -495,7 +500,7 @@
     },
     {
       "name": "Markup text",
-      "scope": ["text.html", "keyword.operator.assignment", ],
+      "scope": ["text.html", "keyword.operator.assignment" ],
       "settings": {
         "foreground": "#ffffffee"
       }
@@ -679,7 +684,7 @@
     {
       "name": "Clojure Globals",
       "scope": [
-        "entity.global.clojure",
+        "entity.global.clojure"
       ],
       "settings": {
         "foreground": "#36f9f6",
@@ -753,7 +758,7 @@
         "source.go keyword.control.go"
       ],
       "settings": {
-        "foreground": "#fede5d",
+        "foreground": "#fede5d"
       }
     },
     {
@@ -761,10 +766,10 @@
       "scope": [
         "source.go storage.type",
         "source.go keyword.struct.go",
-        "source.go keyword.interface.go",
+        "source.go keyword.interface.go"
       ],
       "settings": {
-        "foreground": "#72f1b8",
+        "foreground": "#72f1b8"
       }
     },
     {
@@ -802,7 +807,7 @@
       "name": "Markdown headings",
       "scope": [
         "markup.heading.markdown",
-        "entity.name.section.markdown",
+        "entity.name.section.markdown"
       ],
       "settings": {
         "foreground": "#ff7edb",
@@ -812,7 +817,7 @@
     {
       "name": "Markdown italic",
       "scope": [
-        "markup.italic.markdown",
+        "markup.italic.markdown"
       ],
       "settings": {
         "foreground": "#2EE2FA",
@@ -822,7 +827,7 @@
     {
       "name": "Markdown bold",
       "scope": [
-        "markup.bold.markdown",
+        "markup.bold.markdown"
       ],
       "settings": {
         "foreground": "#2EE2FA",
@@ -833,10 +838,10 @@
       "name": "Markdown quotes",
       "scope": [
         "punctuation.definition.quote.begin.markdown",
-        "markup.quote.markdown",
+        "markup.quote.markdown"
       ],
       "settings": {
-        "foreground": "#72f1b8",
+        "foreground": "#72f1b8"
       }
     },
     {
@@ -849,47 +854,47 @@
     {
       "name": "Dart strings",
       "scope": [
-        "string.interpolated.single.dart",
+        "string.interpolated.single.dart"
       ],
       "settings": {
-        "foreground": "#f97e72",
+        "foreground": "#f97e72"
       }
     },
     {
       "name": "Dart variable params",
       "scope": [
-        "variable.parameter.dart",
+        "variable.parameter.dart"
       ],
       "settings": {
-        "foreground": "#72f1b8",
+        "foreground": "#72f1b8"
       }
     },
     {
       "name": "Dart numerics",
       "scope": [
-        "constant.numeric.dart",
+        "constant.numeric.dart"
       ],
       "settings": {
-        "foreground": "#2EE2FA",
+        "foreground": "#2EE2FA"
       }
     },
     {
       "name": "Scala variable params",
       "scope": [
-        "variable.parameter.scala",
+        "variable.parameter.scala"
       ],
       "settings": {
-        "foreground": "#2EE2FA",
+        "foreground": "#2EE2FA"
       }
     },
     {
       "name": "Scala",
       "scope": [
-        "meta.template.expression.scala",
+        "meta.template.expression.scala"
       ],
       "settings": {
-        "foreground": "#72f1b8",
+        "foreground": "#72f1b8"
       }
-    },
+    }
   ]
 }
