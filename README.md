@@ -7,8 +7,6 @@ A Visual Studio Code extension that adds beautiful typing effects to your editor
 ## Features
 
 - Animated cursor blinking with effects
-- Text sparkle animation when typing
-- Smooth typing animations
 - Custom styling for better visual feedback
 - Complete UI overhaul
 - Complete sytax highlighting overhaul
@@ -39,18 +37,4 @@ This extension requires the [Custom CSS and JS Loader](https://marketplace.visua
 
 MIT
 
-## Note
-
-Due to VS Code's security model, the Custom CSS and JS Loader extension requires you to start VS Code with the `--enable-proposed-api` flag. Please refer to the Custom CSS and JS Loader documentation for detailed setup instructions.
-
-## Setup Instructions
-
-1. Install the "Custom CSS and JS Loader" extension
-2. Start VS Code with the `--enable-proposed-api be5invis.vscode-custom-css` flag:
-   - Windows: Add `--enable-proposed-api be5invis.vscode-custom-css` to your VS Code shortcut target
-   - macOS: `code --enable-proposed-api be5invis.vscode-custom-css`
-   - Linux: `code --enable-proposed-api be5invis.vscode-custom-css`
-3. Install this extension
-4. Open Command Palette and run "meowing: enable"
-5. Click "Reload Now" when prompted
 
